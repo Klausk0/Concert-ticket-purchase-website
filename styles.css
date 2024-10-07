@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwyMDg5NzF8MHwxfGFsbHwxfHx8fHx8fHwxNjA4MjU5Nzc3&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(20, 20, 20, 0.9); /* Darker background */
+    padding: 1em 2em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Optional: Add a subtle border */
+}
+
+.logo {
+    font-size: 1.8em; /* Slightly larger logo font size */
+    color: #e94560;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: Text shadow for depth */
+}
+
+.nav-links a {
+    color: #ffffff; /* Text color for links */
+    text-decoration: none;
+    margin-left: 2em; /* Increased spacing between links */
+    font-weight: 500; /* Slightly bolder text */
+    transition: color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
+}
+
+.nav-links a:hover {
+    color: #e94560; /* Change link color on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.login-button {
+    background-color: #e94560;
+    padding: 0.5em 1.5em; /* Slightly wider button */
+    border-radius: 4px;
+    color: #000; /* Change text color to black */
+    margin-left: 1em;
+    transition: background-color 0.3s, transform 0.3s; /* Added transition */
+}
+
+.login-button:hover {
+    background-color: #d73750; /* Change background on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+main {
+    padding: 2em;
+    width: 80%;
+    margin: 2em auto;
+}
+
+h1 {
+    color: #fff; /* Title text color */
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    background-color: rgba(0, 0, 0, 0.7); /* Title background */
+    padding: 0.5em; /* Add padding for better spacing */
+    border-radius: 5px; /* Optional: rounded corners */
+    text-align: center; /* Center align the title */
+}
+
+h2 {
+    color: #fff; /* Subtitle text color */
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1em;
+    margin-bottom: 2em;
+    scroll-behavior: smooth;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1em;
+    border-radius: 8px;
+    min-width: 300px;
+    max-width: 300px; /* Prevents the item from getting too wide */
+    max-height: 200px; /* Fixed height for the carousel items */
+    overflow: hidden; /* Hides overflow to prevent warping */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Set max height */
+    object-fit: cover; /* Ensures image covers area without stretching */
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.concert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+}
+
+.concert-grid div {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.concert-grid div img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.concert-grid div h3 {
+    color: #000; /* Change concert names text color to black */
+}
+
+.concert-grid div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    width: 100%;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 4px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal-content h2 {
+    color: #000; /* Change purchase window title text color to black */
+}
+
+.modal-content p {
+    color: #000; /* Change purchase window paragraph text color to black */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+}
+
+button {
+    background-color: #e94560; /* Background color of the button */
+    color: #000; /* Change text color to black */
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #d73750; /* Optional: Change background color on hover */
+    transform: scale(1.1);
+}
